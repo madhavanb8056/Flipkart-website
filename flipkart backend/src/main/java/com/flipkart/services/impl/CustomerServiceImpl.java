@@ -1,7 +1,6 @@
 package com.flipkart.services.impl;
 
 
-import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
@@ -22,10 +21,15 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Customer customer = customerDao.getCustomerByPhnNumAndPassword(phn, password);
 		
-		if(Objects.nonNull(customer)) {
-			return customer;
-		}
-		return null;
+      return customer;
 	}
+	
+	
+	public void createCustomer(Customer customer) {
+
+	   customerDao.createNewCustomer(customer);
+	}
+
+	
 
 }
