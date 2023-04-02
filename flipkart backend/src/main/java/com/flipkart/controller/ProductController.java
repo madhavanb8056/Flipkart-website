@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import com.flipkart.services.ProductService;
 
 @RestController
 @RequestMapping("/api/product")
+@CrossOrigin	
 public class ProductController {
 	
 	private ProductService productService;
@@ -57,14 +59,19 @@ public class ProductController {
 		} else {
 			return new ResponseEntity<>(products, HttpStatus.NO_CONTENT);
 		}
-		
+	}
+	@GetMapping(path = "/search/{search}")
+	public ResponseEntity<List<Product>> searchProduct(@PathVariable(name = "search") String search) {
+            List<Product> products = productService.searchProducts(search);
+            if(!CollectionUtils.isEmpty(products)) {
+    			return new ResponseEntity<>(products, HttpStatus.OK);
+    		} else {
+    			return new ResponseEntity<>(products, HttpStatus.NO_CONTENT);
+    		}
 	}
 	
 	
 	
 	
-	
-	
-	
-
+	 
 }

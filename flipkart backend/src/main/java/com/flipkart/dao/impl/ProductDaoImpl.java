@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.flipkart.dao.ProductDao;
 import com.flipkart.model.Catagory;
@@ -26,12 +27,24 @@ public class ProductDaoImpl implements ProductDao {
 		return query.getResultList();
 
        }
+	
 
 	public List<Catagory> getAllCatagories() {
         String sql = "SELECT * FROM product_catagory";
         Query query = entityManager.createNativeQuery(sql, Catagory.class);
 		return query.getResultList();
 		
+	}
+	
+	public List<Product> searchProducts(String search) {
+		String sql = "SELECT * FROM products p left join product_catagory pc on pc.id = p.catagory_id WHERE p.product_name LIKE '%"+search+"%' or pc.name like '%"+search+"%'";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		
+		try {
+            return query.getResultList();
+        } catch (NoResultException ex) {
+            return null;
+        }
 	}
 	
 	public List<Product> getProductsByCatagoryId(int id) {

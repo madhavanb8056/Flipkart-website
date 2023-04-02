@@ -40,11 +40,19 @@ public class Product {
 	private String waranty;
 	@Column(name = "prize")
 	private int prize;
+	@Column(name = "image")
+	private String image;
 	
 	
 	
 	public int getId() {
 		return id;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String imageUrl) {
+		this.image = image;
 	}
 	public void setId(int id) {
 		this.id = id;

@@ -14,5 +14,6 @@ public interface ProductService {
 	public List<Catagory> getAllCatagories();
 	
 	public List<Product> getProductsByCatagoryId(int id);
+	public List<Product> searchProducts(String search);
 
 }

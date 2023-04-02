@@ -27,7 +27,10 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getAllCatagories();
 
 	}
-
+	public List<Product> searchProducts(String search){
+		return productDao.searchProducts(search);
+		
+	}
 
 
 	public List<Product> getProductsByCatagoryId(int id) {
