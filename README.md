@@ -34,14 +34,14 @@ This Flipkart application is purely developed with java 8 SE, MySQL, Angular and
    - In that search bar user can easily find that particular product, which needs for the user.
 ### Profile <a name = "profile"></a>
    - Its a dropdown, which has my account page, contact details and logout.
-   ## My account
-     - User can find that user detail of the account in this my account page.
+### My account
+   - User can find that user detail of the account in this my account page.
        [Myaccount page image](https://drive.google.com/file/d/1Gox4Wna4v-quY_Ep85_Dv8O49zXKikBy/view?usp=share_link)
-   ## Contact
-     - If user facing any issues in this website, User can contact the support team. so, that contact information provided in this page
+### Contact
+   - If user facing any issues in this website, User can contact the support team. so, that contact information provided in this page
        [contact page image](https://drive.google.com/file/d/1hVy-wTEfZRmMk_dUqM9NmsvOGdcoclrc/view?usp=share_link)
-   ## Logout
-     - User can easily logout the account, After placed the orders.
+### Logout
+   - User can easily logout the account, After placed the orders.
 ### Catagories <a name = "cata"></a>
    - It have catagories of the products in home page. So, that user find the product by catagories wise easily. 
      [Catagories image](https://drive.google.com/file/d/1XtPNo996XC1vU8vBhv2ft7r-hZOcGU9y/view?usp=share_link)
