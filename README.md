@@ -17,6 +17,7 @@ This Flipkart application is purely developed with java 8 SE, MySQL, Angular and
    
 ### Home <a name = "home"></a>
    - Home page is the first page of the website. It has unique nav bar with all the features of the website and all the products and catagories.
+     ![alt text](https://drive.google.com/file/d/1FJ2BN3c2nfJHXrVbI0k8X0f58VSRP12l/view?usp=share_link)
 ### Signup <a name = "create_account"></a>
    - Its a user friendly signup page. In signup user can create new login with mobilenumber and password, which is unique number for every login.
 ### Login <a name = "login"></a>
