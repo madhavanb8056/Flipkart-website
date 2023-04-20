@@ -17,4 +17,5 @@ export class GlobalService {
   getData() {
     return this.projectSubject.asObservable();
   }
+
 }

@@ -7,6 +7,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -58,6 +59,18 @@ public class ProductDaoImpl implements ProductDao {
             return null;
         }
 		
+		
+		
+	}
+	public Product getProductById(int id){
+		String sql = "select * from products p where p.id = :id";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		query.setParameter("id", id);
+		try {
+            return (Product) query.getSingleResult();
+        } catch (NoResultException ex) {
+            return null;
+        }
 		
 		
 	}

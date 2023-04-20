@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.flipkart.model.Catagory;
-import com.flipkart.model.Customer;
 import com.flipkart.model.Product;
 import com.flipkart.services.ProductService;
 
@@ -26,7 +24,7 @@ public class ProductController {
 	
 	private ProductService productService;
 	
-	public ProductController(ProductService productService) {
+	public ProductController(ProductService productService) { 
 		this.productService = productService;
 	}
 	
@@ -48,7 +46,7 @@ public class ProductController {
 			return new ResponseEntity<>(catagory, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(catagory, HttpStatus.NO_CONTENT);
-		}
+		} 
     }
 	
 	@GetMapping(path = "/catagory/{id}")
@@ -68,6 +66,19 @@ public class ProductController {
     		} else {
     			return new ResponseEntity<>(products, HttpStatus.NO_CONTENT);
     		}
+	}
+	
+	@GetMapping(path = "/{id}")
+	public ResponseEntity<Product> getProductById(@PathVariable(name = "id") int id){
+		Product product = productService.getProductById(id);
+		 
+		if(Objects.nonNull(product)) {
+			return new ResponseEntity<Product>(product, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<Product>(product, HttpStatus.NO_CONTENT);
+		}
+		  
+		
 	}
 	
 	

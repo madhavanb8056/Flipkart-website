@@ -15,9 +15,9 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@JoinColumn(name = "product_id")
+	@Column(name = "product_id")
 	private int productId;
-	@JoinColumn(name = "customer_id")
+	@Column(name = "customer_id")
 	private long customerId;
 	@Column(name = "status")
 	private String status;
@@ -88,12 +88,4 @@ public class Order {
 	public void setUpdatedOn(String updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-	
-
-	
-	
-	
-	
-	
-	
 }

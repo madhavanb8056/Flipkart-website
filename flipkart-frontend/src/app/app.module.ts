@@ -8,10 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
-import { HelpPageComponent } from './help-page/help-page.component';
 import { BuyingPageComponent } from './buying-page/buying-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/contact.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,18 +22,19 @@ import { FormsModule } from '@angular/forms';
     SignUpComponent,
     MyaccountComponent,
     OrderDetailsComponent,
-    HelpPageComponent,
-    BuyingPageComponent
+    BuyingPageComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
   bootstrap: [AppComponent,
-    HomeComponent]
+    HomeComponent, DatePipe]
 })
 export class AppModule { }

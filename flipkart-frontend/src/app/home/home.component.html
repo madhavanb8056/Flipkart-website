@@ -4,66 +4,68 @@
 
                             	
                                
-    <div class="row">
-<div class="col-md-4 col-sm-6">
-<div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+    <div class="row" >
+<div class="col-md-4 col-sm-6" >
+<div class="card mb-30"><a class="card-img-tiles" (click)="options('2')"  data-abc="true">
 <div class="inner">
 <div class="main-img"><img src="https://i.imgur.com/O0GMYuw.jpg" alt="Category"></div>
 <div class="thumblist"><img src="https://i.imgur.com/ILEU18M.jpg" alt="Category"><img src="https://i.imgur.com/2kePJmX.jpg" alt="Category"></div>
 </div></a>
 <div class="card-body text-center">
 <h4 class="card-title">Laptops</h4>
-<a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Products</a>
+<a class="btn btn-outline-primary btn-sm" (click)="options('2')" data-abc="true">View Products</a>
 </div>
 </div>
 </div>
 <div class="col-md-4 col-sm-6">
-<div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+<div class="card mb-30"><a class="card-img-tiles" (click)="options('1')" data-abc="true">
 <div class="inner">
 <div class="main-img"><img src="\assets\images\pix.jpg" alt="Category"></div>
 <div class="thumblist"><img src="\assets\images\sam.jpg" alt="Category"><img src="\assets\images\iph.jpg" alt="Category"></div>
 </div></a>
 <div class="card-body text-center">
 <h4 class="card-title">Mobiles</h4>
-<a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Products</a>
+<a class="btn btn-outline-primary btn-sm" (click)="options('1')" data-abc="true">View Products</a>
 </div>
 </div>
 </div>
 <div class="col-md-4 col-sm-6">
-<div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+<div class="card mb-30"><a class="card-img-tiles" (click)="options('3')" data-abc="true">
 <div class="inner">
 <div class="main-img"><img src="\assets\images\hp2.jpg" alt="Category"></div>
 <div class="thumblist"><img src="\assets\images\hp 3.jpg" alt="Category"><img src="\assets\images\hp1.jpg"></div>
 </div></a>
 <div class="card-body text-center">
 <h4 class="card-title">Head Phones</h4>
-<a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">View Products</a>
+<a class="btn btn-outline-primary btn-sm" (click)="options('3')" data-abc="true">View Products</a>
 </div>
 </div>
 </div>
 </div>
 </div>
 
-<div *ngIf="!isDisplayed" class="spinner-border text-primary text-center" role="status">
- <span class="sr-only">Loading...</span>
-</div>
-
-<h3 class="text-center">Products you are looking for...</h3>
+<div class="text-center">
+   <div *ngIf="!isDisplayed" class="spinner-border" role="status">
+     <span class="visually-hidden">Loading...</span>
+   </div>
+ </div>
+<div>
+<h3 style="color: black;" class="text-center">Products you are looking for...</h3>
 
 <div *ngIf="isDisplayed" class="container d-flex justify-content-center mt-100">
     <div class="row">
-       <div class="col-md-3" *ngFor="let pro of products;">
+       <div class="col-md" *ngFor="let pro of products;">
           <div class="product-wrapper mb-45 text-center">
              <div class="product-img">
 
-                <a href="#" data-abc="true"> 
+                <a [routerLink]="['/buy',pro.id]" data-abc="true"> 
                 <img class="product-imgsize" src="\assets\products\{{pro.image}}" alt=""> </a>	
                  
                 <div class="product-action">
                     <h4 style="color: rgb(0, 0, 0);">{{pro.productName}}</h4>
                     <h5>{{pro.prize}}</h5>
                    <div class="product-action-style"> 
-                      <a href="#"> <i class="fa fa-plus"></i><strong style="color: rgb(255, 255, 255);" >Buy Now</strong> </a>  
+                      <a [routerLink]="['/buy',pro.id]"> <i class="fa fa-plus"></i><strong style="color: rgb(255, 255, 255);" >View details</strong> </a>  
                    </div>
                 </div>
              </div>
@@ -71,3 +73,11 @@
        </div>  
     </div>
  </div>
+</div>
+
+<div>
+   <h3 style="color: black;" class="text-center"></h3>
+   
+</div>
+
+<router-outlet></router-outlet>

@@ -51,7 +51,7 @@ public class Product {
 	public String getImage() {
 		return image;
 	}
-	public void setImage(String imageUrl) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	public void setId(int id) {

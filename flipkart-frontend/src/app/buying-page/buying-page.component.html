@@ -1,1 +1,39 @@
-<p>buying-page works!</p>
+
+
+<div class="header">
+    <div class="row r1">
+        <div class="col-md-9 abc">
+            <h1>{{product.productName}}</h1>
+        </div>
+        
+       
+    </div>
+    
+</div>
+<div class="container-body mt-4">
+    <div class="row r3">
+        <div class="col-md-5 p-0 klo">
+            <ul>
+                <li><b>Specification:</b>   {{product.specification}}</li>
+                <li><b>Processor:</b>   {{product.processor}}</li>
+                <li><b>Screen size:</b>   {{product.screenSize}}</li>
+                <li><b>Storage:</b>   {{product.storage}}</li>
+                <li><b>Model Number:</b>   {{product.modelNumber}}</li>
+                <li><b>Battery:</b>   {{product.battery}}</li>
+                <li><b>Warranty:</b>   {{product.waranty}}</li>
+                <li><b>Prize:</b>   {{product.prize}}</li>
+            </ul>
+        </div>
+        <div class="col-md-5"> <img src="\assets\products\{{product.image}}" width="90%" height="95%"> </div>
+    </div>
+</div>
+<div class="d-flex flex-column mt-5">
+    <div class="row r4">
+        <select [(ngModel)]="paymentMode" style="width: 300px;" class="form-select" aria-label="Default select example">
+            <option *ngFor ="let modeOfPayment of modeOfPaymentList" [value]="modeOfPayment" selected>{{modeOfPayment}}</option>
+            
+        
+          </select>
+        <div (click)="buy()" style="width: 300px;" class="col-md-2 myt "><button type="button" class="btn btn-outline-warning" >BUY NOW</button></div>
+    </div>
+</div> 

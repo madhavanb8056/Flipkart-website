@@ -6,7 +6,7 @@ import {SignUpComponent} from './sign-up/sign-up.component'
 import {MyaccountComponent} from './myaccount/myaccount.component'
 import {OrderDetailsComponent} from './order-details/order-details.component'
 import {BuyingPageComponent} from './buying-page/buying-page.component'
-import { HelpPageComponent } from './help-page/help-page.component';
+import { ContactComponent} from './contact/contact.component';
 
 const routes: Routes = [
 {
@@ -27,15 +27,15 @@ const routes: Routes = [
 },
 {
   component:OrderDetailsComponent,
-  path:'orders'
+  path:'orders/:id'
 },
 {
   component:BuyingPageComponent,
-  path:'buy'
+  path:'buy/:id'
 },
 {
-  component:HelpPageComponent,
-  path:'help'
+  component:ContactComponent,
+  path:'contact'
 },
 { path: '', redirectTo: 'home', pathMatch: 'full' },
   

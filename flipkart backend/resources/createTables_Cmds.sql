@@ -1,7 +1,7 @@
 use flipkart;
 create table customers(
-id int primary key auto_increment,
-mobile_number int not null,
+id bigint primary key auto_increment,
+mobile_number bigint not null,
 user_name varchar (30) not null,
 email varchar(50) not null,
 address varchar(50) not null,
@@ -29,7 +29,7 @@ foreign key (catagory_id) references product_catagory(id)
 create table orders(
 id int primary key auto_increment,
 product_id int not null,
-customer_id int not null,
+customer_id bigint not null,
 status varchar(20),
 payment_mode varchar(20),
 payment_status varchar(10),

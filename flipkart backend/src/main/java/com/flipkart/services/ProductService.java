@@ -2,6 +2,7 @@ package com.flipkart.services;
 
 import java.util.List;
 
+
 import com.flipkart.model.Catagory;
 import com.flipkart.model.Product;
 
@@ -15,5 +16,5 @@ public interface ProductService {
 	
 	public List<Product> getProductsByCatagoryId(int id);
 	public List<Product> searchProducts(String search);
-
+	public Product getProductById(int id);
 }

@@ -1,1 +1,52 @@
-<p>order-details works!</p>
+<section class="h-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-10 col-xl-8">
+        <div class="card" style="border-radius: 10px;">
+          <div class="card-header px-4 py-5">
+            <h5 class="text-muted mb-0">Thanks for your Order, <span style="color: #a8729a;">{{name}}</span>!</h5>
+          </div>
+          <div class="card-body p-4">
+           
+            <div class="card shadow-0 border mb-4" *ngFor="let order of orders;">
+              <div class="card-body" *ngIf="isDisplayed" >
+                <div class="row" >
+                  <div class="col-md-2" >
+                    <img src="\assets\products\{{order.image}}"
+                      class="img-fluid" alt="Phone">
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0"><b>Order ID:</b><br> {{order.orderId}}</p>
+                  </div>
+                  
+                  <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"><b>Mode of payment:</b> <br>{{order.paymentMode}}</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"><b>Payment status:</b><br> {{order.paymentStatus}}</p>
+                  </div>
+                  <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"><b>Order date:</b><br> {{order.createdOn}}</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"><b>{{order.productName}}</b></p>
+                  </div>
+                  <div class="col-md-3 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"><b>Delivery date:</b><br> {{order.deliveryOn}}</p>
+                  </div>
+                  
+                </div>
+                <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;"> 
+              </div>
+            </div>
+          </div>     
+       
+          <div class="card-footer border-0 px-4 py-5"
+            style="background-color: #a8729a; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+            <p class="d-flex align-items-center justify-content-left text-white text-uppercase mb-0">Billing address: {{address}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

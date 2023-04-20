@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FlipkartService } from '../flipkart.service';
 import { GlobalService } from '../service/global.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,13 @@ import { GlobalService } from '../service/global.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  
   products: any = [];
   isDisplayed: boolean = false;
   constructor(
     private flipkartService: FlipkartService,
-    private globalService: GlobalService) {
+    private globalService: GlobalService,
+    private app: AppComponent) {
 
   }
 
@@ -32,4 +34,22 @@ export class HomeComponent {
       this.products = data;
     });
   }
+   options(catagory: any)
+  {
+    this.app.search = "";
+   this.flipkartService.get("http://localhost:8080/api/product/catagory/id".replace("id", catagory)).subscribe(
+    Response=> {
+    console.log(Response);
+    this.products = Response;
+    this.globalService.sendData(this.products);
+    
+
+
+   })
+  
+
+  }
+
+
 }
+
