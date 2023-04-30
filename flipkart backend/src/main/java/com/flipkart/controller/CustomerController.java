@@ -33,15 +33,15 @@ public class CustomerController {
         
 		Customer customer = customerService.getCustomer(phnNum, password);
 		if(Objects.nonNull(customer)) {
-			return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+	 		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<Customer>(customer, HttpStatus.NO_CONTENT);
 		}
 	}
 	
-	@PostMapping(path = "/create")
-	private ResponseEntity<Customer> createCustomer(@RequestBody Customer customer ) {
+	@PostMapping(path = "/create/{id}")
+	private ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
 		customerService.createCustomer(customer);
-          return ResponseEntity.status(HttpStatus.CREATED).body(customer) ;
+        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
 	}
 }

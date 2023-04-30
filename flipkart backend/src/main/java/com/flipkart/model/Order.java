@@ -18,7 +18,7 @@ public class Order {
 	@Column(name = "product_id")
 	private int productId;
 	@Column(name = "customer_id")
-	private long customerId;
+	private Long customerId;
 	@Column(name = "status")
 	private String status;
 	@Column(name = "payment_mode")
@@ -52,10 +52,10 @@ public class Order {
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public long getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(long customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
 	public String getStatus() {

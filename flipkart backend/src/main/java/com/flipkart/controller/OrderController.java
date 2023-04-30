@@ -1,6 +1,7 @@
 package com.flipkart.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import org.springframework.http.HttpStatus;
@@ -57,6 +58,17 @@ public class OrderController {
 			return new ResponseEntity<>(orders, HttpStatus.NO_CONTENT);
 		}
 
+		
+	}
+	
+	@GetMapping(path = "/all")
+	public ResponseEntity<Map<String, List<Order>>> getAllOrders() {
+		Map<String, List<Order>> allOrders = orderService.getAllOrders();
+		if(!CollectionUtils.isEmpty(allOrders)) {
+			return new ResponseEntity<>(allOrders, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(allOrders, HttpStatus.NO_CONTENT);
+		}
 		
 	}
 

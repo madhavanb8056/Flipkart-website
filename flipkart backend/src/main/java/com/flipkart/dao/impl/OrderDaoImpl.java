@@ -3,7 +3,6 @@ package com.flipkart.dao.impl;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -84,5 +83,13 @@ public class OrderDaoImpl implements OrderDao {
 		
 		
 	}
+	public List<Order> getAllOrders(){
+		String sql = "SELECT * FROM orders";
+		Query query = entityManager.createNativeQuery(sql, Order.class);
+		return query.getResultList();
+
+       }
+		
+	
 
 } 
