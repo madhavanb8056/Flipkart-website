@@ -4,6 +4,12 @@ This Flipkart application is purely developed with java 8 SE, MySQL, Angular and
 
 ## Application Design Reference: [Design Architecture Link](https://drive.google.com/file/d/1Se2Ps2GRe72UTQQCJyXm8qwxw2i-IR1k/view?usp=share_link)
 
+
+
+https://user-images.githubusercontent.com/117974121/235442258-0b0b8b0c-6882-4edb-bf08-0f17d912e98a.mp4
+
+
+
 ## Features:
    - [Home Page](#home)
    - [Signup](#create_account)
